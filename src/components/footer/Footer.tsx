@@ -8,25 +8,21 @@ const Footer = ({ typeShow }: any) => {
       <div className='flexCenter '>
         <div
           className={`smBtn mr-1 ${
-            typeShow === 'All' ? 'border-[#e69191] border-[1px]' : ''
+            typeShow === 'All' ? 'border-[1px]' : ''
           }`}
         >
           All
         </div>
         <div
           className={`smBtn mr-1 ${
-            typeShow === 'Active'
-              ? 'border-[#e69191] border-[1px]'
-              : ''
+            typeShow === 'Active' ? 'border-[1px]' : ''
           }`}
         >
           Active{' '}
         </div>
         <div
           className={`smBtn ${
-            typeShow === 'Active'
-              ? 'border-[#e69191] border-[1px]'
-              : ''
+            typeShow === 'Active' ? 'border-[1px]' : ''
           }`}
         >
           Completed

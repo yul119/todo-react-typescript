@@ -5,7 +5,7 @@
     @apply flex justify-center items-center;
   }
   .smBtn {
-    @apply px-2 cursor-pointer;
+    @apply px-2 cursor-pointer border-[#ead7d7];
   }
 }
 @tailwind utilities;

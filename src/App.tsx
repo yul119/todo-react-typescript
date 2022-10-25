@@ -7,14 +7,12 @@ import Todos from './components/todos/Todos';
 
 const App: React.FC = () => {
   return (
-    <div className='w-screen h-screen pb-[200px] flexCenter flex-col'>
-      <div className='flexCenter flex-col'>
-        <Header />
-        <div className='w-[550px] h-auto flexCenter flex-col border-[1px] border-stone-300 shadow-lg shadow-indigo-500/40'>
-          <Input />
-          <Todos />
-          <Footer typeShow='All' />
-        </div>
+    <div className='flexCenter flex-col mt-[100px]'>
+      <Header />
+      <div className='w-[550px] h-auto flexCenter flex-col justify-start border-[1px] border-stone-300 shadow-lg shadow-indigo-500/40'>
+        <Input />
+        <Todos />
+        <Footer typeShow='All' />
       </div>
     </div>
   );
