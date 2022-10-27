@@ -17,14 +17,20 @@ export interface IInputProp {
 
 export interface ITodoListProp {
   todos: Array<ITodo>;
+  editing: string;
   deleteTodo(id: string);
+  setEditing(id: string);
+  updateTodo(id: string, text: string);
   checkTodo(id: string);
 }
 
 export interface ITodoItemProp {
   key: string;
   todo: ITodo;
+  editing: string;
   deleteTodo(id: string);
+  setEditing(id: string);
+  updateTodo(id: string, text: string);
   checkTodo(id: string);
 }
 

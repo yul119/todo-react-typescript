@@ -10,7 +10,10 @@ const Todos = (prop: ITodoListProp): any => {
         <TodoItem
           key={todo.id}
           todo={todo}
+          editing={prop.editing}
           deleteTodo={prop.deleteTodo}
+          setEditing={prop.setEditing}
+          updateTodo={prop.updateTodo}
           checkTodo={prop.checkTodo}
         />
       ))}

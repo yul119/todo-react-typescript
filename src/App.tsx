@@ -60,7 +60,7 @@ const App: React.FC = () => {
     localStore(LOCAL_STORE, newStore.todos);
   };
 
-  const checkTodo = (id: string): any => {
+  const checkTodo = (id: string): void => {
     const checkedTodo = store.todos.map((todo) =>
       todo.id === id
         ? { ...todo, isCompleted: !todo.isCompleted }
@@ -73,7 +73,23 @@ const App: React.FC = () => {
     localStore(LOCAL_STORE, newStore.todos);
   };
 
-  const completedAllTodos = (): any => {
+  const setEditing = (id: string): void => {
+    setStore({ ...store, editing: id });
+  };
+
+  const updateTodo = (id: string, text: string): void => {
+    const updatedTodo = store.todos.map((todo) => {
+      console.log({ old: todo.text, new: text });
+      return todo.id === id ? { ...todo, text: text } : todo;
+    });
+    const newStore = { ...store, todos: updatedTodo };
+    // update state
+    setStore({ ...newStore });
+    // update db
+    localStore(LOCAL_STORE, newStore.todos);
+  };
+
+  const completedAllTodos = (): void => {
     const doneAllTodo = store.todos.map((todo) => {
       return {
         ...todo,
@@ -88,7 +104,7 @@ const App: React.FC = () => {
     localStore(LOCAL_STORE, newStore.todos);
   };
 
-  const clearCompletedTodo = (): any => {
+  const clearCompletedTodo = (): void => {
     const clearCompleted = store.todos.filter(
       (todo) => todo.isCompleted === false
     );
@@ -117,7 +133,10 @@ const App: React.FC = () => {
           />
           <Todos
             todos={store.todos}
+            editing={store.editing}
             deleteTodo={deleteTodo}
+            setEditing={setEditing}
+            updateTodo={updateTodo}
             checkTodo={checkTodo}
           />
           {allTodos.length > 0 && (
