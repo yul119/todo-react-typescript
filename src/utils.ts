@@ -1,3 +1,5 @@
+import { ITodo } from './interfaces';
+
 export const uuid = (): string => {
   var i, random;
   var uuid = '';
@@ -19,7 +21,10 @@ export const pluralize = (count: number, word: string): string => {
   return count === 1 ? word : word + 's';
 };
 
-export const localStore = (namespace: string, data?: any): any => {
+export const localStore = (
+  namespace: string,
+  data?: any
+): void | Array<ITodo> => {
   if (data) {
     return localStorage.setItem(namespace, JSON.stringify(data));
   }

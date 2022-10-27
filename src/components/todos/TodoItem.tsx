@@ -1,5 +1,6 @@
 import React from 'react';
 import { BsCircle, BsCheckCircle } from 'react-icons/bs';
+import { SlCheck } from 'react-icons/sl';
 import { AiOutlineClose } from 'react-icons/ai';
 import { ITodoItemProp } from '../../interfaces';
 
@@ -10,7 +11,7 @@ const TodoItem = (prop: ITodoItemProp): any => {
     <div className='w-full'>
       <div className='w-full h-[60px] px-2 flexCenter justify-between group relative'>
         {todo.isCompleted ? (
-          <BsCheckCircle
+          <SlCheck
             className='w-[5%] text-4xl text-[#6cc8b6] cursor-pointer'
             onClick={() => prop.checkTodo(todo.id)}
           />

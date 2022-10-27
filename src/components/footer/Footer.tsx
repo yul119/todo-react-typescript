@@ -46,7 +46,7 @@ const Footer = (prop: IFooterProps) => {
       </div>
 
       <p
-        className='cursor-pointer w-[30%] text-end'
+        className='cursor-pointer w-[30%] text-end hover:underline decoration-solid'
         onClick={() => prop.clearCompletedTodo()}
       >
         {prop.showBtn() ? 'Clear completed' : ''}

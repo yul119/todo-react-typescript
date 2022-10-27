@@ -45,7 +45,7 @@ const App: React.FC = () => {
       isCompleted: false,
     };
     const newStore = { ...store, todos: [...store?.todos, newTodo] };
-    // updata state
+    // update state
     setStore({ ...newStore });
     // update db
     localStore(LOCAL_STORE, newStore.todos);
@@ -54,7 +54,7 @@ const App: React.FC = () => {
   const deleteTodo = (id: string): void => {
     const deletedTodo = store.todos.filter((todo) => todo.id !== id);
     const newStore = { ...store, todos: deletedTodo };
-    // updata state
+    // update state
     setStore({ ...newStore });
     // update db
     localStore(LOCAL_STORE, newStore.todos);
@@ -67,7 +67,7 @@ const App: React.FC = () => {
         : todo
     );
     const newStore = { ...store, todos: checkedTodo };
-    // updata state
+    // update state
     setStore({ ...newStore });
     // update db
     localStore(LOCAL_STORE, newStore.todos);
@@ -82,7 +82,7 @@ const App: React.FC = () => {
       };
     });
     const newStore = { ...store, todos: doneAllTodo };
-    // updata state
+    // update state
     setStore({ ...newStore });
     // update db
     localStore(LOCAL_STORE, newStore.todos);
@@ -93,7 +93,7 @@ const App: React.FC = () => {
       (todo) => todo.isCompleted === false
     );
     const newStore = { ...store, todos: clearCompleted };
-    // updata state
+    // update state
     setStore({ ...newStore });
     // update db
     localStore(LOCAL_STORE, newStore.todos);
