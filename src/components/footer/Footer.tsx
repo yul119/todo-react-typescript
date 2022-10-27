@@ -15,7 +15,7 @@ const Footer = (prop: IFooterProps) => {
   )} left`;
 
   return (
-    <div className='w-full h-[50px] px-2 text-[#777] text-sm flexCenter justify-between border-t-[1px] border-[#e6e6e6] before:footerBefore'>
+    <div className='z-10 w-full h-[50px] px-[15px] text-[#777] text-sm flexCenter justify-between border-t-[1px] border-[#e6e6e6] relative before:footerBefore'>
       <p className='w-[30%]'>{todoLeft}</p>
 
       <div className='w-[40%] flexCenter '>

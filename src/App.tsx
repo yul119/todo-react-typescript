@@ -120,13 +120,15 @@ const App: React.FC = () => {
             deleteTodo={deleteTodo}
             checkTodo={checkTodo}
           />
-          <Footer
-            countTodo={activeTodo.length}
-            typeShow={store.typeShow}
-            clearCompletedTodo={clearCompletedTodo}
-            setTypeShow={setTypeShow}
-            showBtn={showBtnClearCompleted}
-          />
+          {allTodos.length > 0 && (
+            <Footer
+              countTodo={activeTodo.length}
+              typeShow={store.typeShow}
+              clearCompletedTodo={clearCompletedTodo}
+              setTypeShow={setTypeShow}
+              showBtn={showBtnClearCompleted}
+            />
+          )}
         </div>
       </div>
     </div>
