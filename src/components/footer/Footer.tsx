@@ -1,35 +1,56 @@
 import React from 'react';
+import {
+  ACTIVE_TODOS,
+  ALL_TODOS,
+  COMPLETED_TODOS,
+} from '../../constant';
+import { IFooterProps } from '../../interfaces';
+import { pluralize } from '../../utils';
 
-const Footer = ({ typeShow }: any) => {
+const Footer = (prop: IFooterProps) => {
+  let typeShow = prop.typeShow;
+  let todoLeft = `${prop.countTodo} ${pluralize(
+    prop.countTodo,
+    'item'
+  )} left`;
+
   return (
-    <div className='w-full h-[50px] px-2 text-stone-400 text-sm flexCenter justify-between border-t-[1px] border-stone-300'>
-      <p className=''>2 items left</p>
+    <div className='w-full h-[50px] px-2 text-[#777] text-sm flexCenter justify-between border-t-[1px] border-[#e6e6e6] before:footerBefore'>
+      <p className='w-[30%]'>{todoLeft}</p>
 
-      <div className='flexCenter '>
+      <div className='w-[40%] flexCenter '>
         <div
           className={`smBtn mr-1 ${
-            typeShow === 'All' ? 'border-[1px]' : ''
+            typeShow === ALL_TODOS ? 'border-[#ead7d7]' : ''
           }`}
+          onClick={() => prop.setTypeShow(ALL_TODOS)}
         >
           All
         </div>
         <div
           className={`smBtn mr-1 ${
-            typeShow === 'Active' ? 'border-[1px]' : ''
+            typeShow === ACTIVE_TODOS ? 'border-[#ead7d7]' : ''
           }`}
+          onClick={() => prop.setTypeShow(ACTIVE_TODOS)}
         >
-          Active{' '}
+          Active
         </div>
         <div
           className={`smBtn ${
-            typeShow === 'Active' ? 'border-[1px]' : ''
+            typeShow === COMPLETED_TODOS ? 'border-[#ead7d7]' : ''
           }`}
+          onClick={() => prop.setTypeShow(COMPLETED_TODOS)}
         >
           Completed
         </div>
       </div>
 
-      <p className='cursor-pointer'>Clear completed</p>
+      <p
+        className='cursor-pointer w-[30%] text-end'
+        onClick={() => prop.clearCompletedTodo()}
+      >
+        {prop.showBtn() ? 'Clear completed' : ''}
+      </p>
     </div>
   );
 };

@@ -1,11 +1,35 @@
 @tailwind base;
+
 @tailwind components;
 @layer components {
   .flexCenter {
     @apply flex justify-center items-center;
   }
   .smBtn {
-    @apply px-2 cursor-pointer border-[#ead7d7];
+    @apply px-2 cursor-pointer  border-[1px] border-[#f4f4f4] hover:border-[#ead7d7] rounded-[4px];
   }
 }
 @tailwind utilities;
+@layer utilities {
+  .appBoxShadow {
+    box-shadow: 0 2px 4px 0 rgb(0 0 0 / 20%),
+      0 25px 50px 0 rgb(0 0 0 / 10%);
+  }
+  .inputBefore {
+    content: '❯';
+    font-size: 22px;
+    color: #e6e6e6;
+  }
+  .footerBefore {
+    content: '';
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    height: 50px;
+    overflow: hidden;
+    box-shadow: 0 1px 1px rgb(0 0 0 / 20%), 0 8px 0 -3px #f6f6f6,
+      0 9px 1px -3px rgb(0 0 0 / 20%), 0 16px 0 -6px #f6f6f6,
+      0 17px 2px -6px rgb(0 0 0 / 20%);
+  }
+}
