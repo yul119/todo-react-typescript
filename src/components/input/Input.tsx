@@ -1,5 +1,4 @@
 import React, { useState } from 'react';
-import { BsChevronCompactDown } from 'react-icons/bs';
 import { IoIosArrowDown } from 'react-icons/io';
 import { ENTER_KEY } from '../../constant';
 import { IInputProp } from '../../interfaces';
